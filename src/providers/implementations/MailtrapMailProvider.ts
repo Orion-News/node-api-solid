@@ -1,4 +1,4 @@
-import { MailProvider, Message } from "../../providers/MailProvider";
+import { MailProvider, Message } from "../MailProvider";
 import nodemailer from 'nodemailer'
 import Mail from "nodemailer/lib/mailer";
 
