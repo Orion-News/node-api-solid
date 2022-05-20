@@ -12,22 +12,22 @@ export class MailtrapMailProvider implements MailProvider {
       auth: {
         user: "5feeafea53958e",
         pass: "339ecbd8aa9cb6"
-      }
-    })
+      },
+    });
   }
 
   async sendMail(message: Message): Promise<void> {
     await this.transporter.sendMail({
       to: {
-        address: message.to.email,
         name: message.to.name,
+        address: message.to.email,
       },
       from: {
         name: message.from.name,
-        address: message.from.email
+        address: message.from.email,
       },
       subject: message.subject,
-      html: message.body
-    })
+      html: message.body,
+    });
   }
 }

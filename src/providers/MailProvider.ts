@@ -1,6 +1,6 @@
 interface Address {
   email: string;
-  name: string
+  name: string;
 }
 
 export interface Message {

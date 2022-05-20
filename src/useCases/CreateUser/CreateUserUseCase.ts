@@ -15,22 +15,21 @@ export class CreateUserUseCase {
     if (userAlreadyExists) {
       throw new Error('User already exists.');
     }
-
     const user = new User(data);
     
     await this.usersRepository.save(user);
-
+    
     await this.mailProvider.sendMail({
       to: {
         name: data.name,
-        email: data.email
+        email: data.email,
       },
       from: {
-        name: 'Gevs',
-        email: 'Gevs@meuapp.com'
+        name: "Equipe do meu APP",
+        email: "equipe@meuapp.com",
       },
-      subject: 'seja Bem-Vindo á Plataform',
-      body: '<p>Você já pode fazer login em nossa plataforma. </p>'
-    })
+      subject: "Seja bem-vindo à plataforma",
+      body: "<h1><bold>Você já pode fazer login em nossa plataform.<bold></h1>",
+    });
   }
 }
